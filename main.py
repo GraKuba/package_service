@@ -23,11 +23,6 @@ while package_count >= 0:
         else:
             package_weight += element
 
-    print("Package count:", package_count)
-    print("Current package weight:", package_weight)
-    print("Kilograms sent:", kilograms_sent)
-    print("Package with the highest waste:", highest_waste)
-
 print("Packages sent: {}, Kilograms sent: {}, Wasted kilograms: {}, Package with the highest waste: {}".format(
     package_count, kilograms_sent, (package_count * 20) - kilograms_sent, highest_waste))
 
