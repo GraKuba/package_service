@@ -20,8 +20,14 @@ while True:
             package_weight = 0
             package_weight += element
             print("Package has been sent")
+        elif (package_weight + element) == 20:
+            package_count += 1
+            kilograms_sent += 20
+            package_weight = 0
+            print("Package has been sent")
         else:
             package_weight += element
+
 
 print("Packages sent: {}, Kilograms sent: {}, Wasted kilograms: {}, Package with the highest waste: {}".format(
     package_count, kilograms_sent, (package_count * 20) - kilograms_sent, highest_waste))
