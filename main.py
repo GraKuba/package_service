@@ -4,7 +4,7 @@ kilograms_sent = 0
 highest_waste = 0
 waste = 0
 
-while package_count >= 0:
+while True:
     print("Input package weight")
     element = int(input())
     if element > 10 or element < 1:
@@ -25,4 +25,3 @@ while package_count >= 0:
 
 print("Packages sent: {}, Kilograms sent: {}, Wasted kilograms: {}, Package with the highest waste: {}".format(
     package_count, kilograms_sent, (package_count * 20) - kilograms_sent, highest_waste))
-
