@@ -3,7 +3,7 @@ package_weight = 0
 kilograms_sent = 0
 highest_waste = 0
 waste = 0
-highest_waste_package_nr = 1
+highest_waste_package_nr = 0
 current_highest_waste_package_nr = 1
 
 while True:
@@ -21,6 +21,15 @@ while True:
                 highest_waste = 0
                 highest_waste += waste
                 current_highest_waste_package_nr = highest_waste_package_nr
+            if element > 0:
+                highest_waste_package_nr += 1
+                package_count += 1
+                kilograms_sent += element
+                waste = 20 - element
+                if highest_waste < waste:
+                    highest_waste = 0
+                    highest_waste += waste
+                    current_highest_waste_package_nr = highest_waste_package_nr
             package_weight = 0
             package_weight += element
             print("Package has been sent")
@@ -29,6 +38,15 @@ while True:
             kilograms_sent += 20
             package_weight = 0
             print("Package has been sent")
+        elif package_weight < 20 and package_count == 0:
+            highest_waste_package_nr += 1
+            package_count += 1
+            kilograms_sent += element
+            waste = 20 - element
+            if highest_waste < waste:
+                highest_waste = 0
+                highest_waste += waste
+                current_highest_waste_package_nr = highest_waste_package_nr
         else:
             package_weight += element
 
